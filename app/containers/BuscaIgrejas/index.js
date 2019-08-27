@@ -14,10 +14,10 @@ class BuscaIgrejasContainer extends Component {
           nome: 'Próximo a mim',
         },
         diaSemana: {
-          nome: '',
+          nome: 'Hoje',
         },
         horario: {
-          nome: '',
+          nome: '18:00',
         },
       }
     }

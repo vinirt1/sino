@@ -3,18 +3,22 @@ import {
   StyleSheet,
   View,
   Button,
+  StatusBar,
 } from 'react-native';
+
+import CheckBox from '../../components/CheckBox';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
 import SectionBusca from '../../components/SectionBusca';
-import SectionBuscaAvancada from '../../components/SectionBuscaAvancada'
+import Link from '../../components/Link'
 
 const BuscaIgrejasView = (props) => {
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor="white" barStyle="light-content" />
       <View style={styles.header} />
       <View style={styles.body}>
         <SectionBusca 
@@ -29,9 +33,12 @@ const BuscaIgrejasView = (props) => {
           titulo="Em qual horário?" 
           descricao={ props.dadosFiltro.horario.nome } 
           acao={() => props.navegarFiltro('Horarios')} />  
-        <SectionBuscaAvancada
-          descricao="Busca Avançada" 
-          acao={() => props.navegarFiltro('BuscaAvancadaIgrejas')} />      
+        <CheckBox descricao="Mostre-me horários próximos"/>  
+        <View style={styles.containerLink}>
+          <Link
+            descricao="Busca Avançada" 
+            acao={() => props.navegarFiltro('BuscaAvancadaIgrejas')} />    
+        </View>
       </View>
       <View style={styles.footer}>
         <Button
@@ -49,6 +56,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.lighter,
     flex: 1
+  },
+  containerLink: {
+    marginTop: 25,
+    paddingHorizontal: 24,
   },
   header: {
     backgroundColor: Colors.white,
