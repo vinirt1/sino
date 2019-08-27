@@ -14,7 +14,7 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-class ListaDividerView extends Component {
+class ListaView extends Component {
   constructor(props) {
     super(props)
     
@@ -24,13 +24,6 @@ class ListaDividerView extends Component {
   }
 
   _renderItem = ({ item }) => {
-    if (item.header) {
-      return (
-        <View style={styles.dividerContainer}>
-          <Text style={styles.dividerTitle}>{ item.nome }</Text>
-        </View>   
-      );
-    } else if (!item.header) {
       return (
         <View style={styles.sectionContainer}>
           <TouchableOpacity onPress={() => this.props.acao(item)}>
@@ -38,7 +31,6 @@ class ListaDividerView extends Component {
           </TouchableOpacity>
         </View>   
       );
-    }
   };
 
   _keyExtractor = item => item.nome;
@@ -63,22 +55,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.2,
     borderBottomColor: "#47315a",
   },
-  dividerContainer: {
-    padding: 20,
-    paddingTop: 35,
-    paddingBottom: 5,
-  },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
     marginBottom: 15,
     color: 'steelblue',
   },
-  dividerTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
 });
 
-export default ListaDividerView;
+export default ListaView;

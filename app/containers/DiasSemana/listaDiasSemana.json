@@ -1,0 +1,36 @@
+[{
+		"id": "1",
+		"sigla": "seg",
+		"nome": "Segunda"
+	},
+	{
+		"id": "2",
+		"sigla": "ter",
+		"nome": "Terça"
+	},
+	{
+		"id": "3",
+		"sigla": "qua",
+		"nome": "Quarta"
+	},
+	{
+		"id": "4",
+		"sigla": "qui",
+		"nome": "Quinta"
+	},
+	{
+		"id": "5",
+		"sigla": "sex",
+		"nome": "Sexta"
+	},
+	{
+		"id": "6",
+		"sigla": "sab",
+		"nome": "Sábado"
+	},
+	{
+		"id": "7",
+		"sigla": "dom",
+		"nome": "Domingo"
+	}
+]

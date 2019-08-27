@@ -1,21 +1,42 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 
 import BuscaIgrejas from '../../views/BuscaIgrejas';
 
 class BuscaIgrejasContainer extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      dadosFiltro: {
+        local: {
+          nome: 'Próximo a mim',
+        },
+        diaSemana: {
+          nome: '',
+        },
+        horario: {
+          nome: '',
+        },
+      }
+    }
+  }
+  
+  componentDidMount() {
+    console.log(this.props);
   }
 
-  _navegarSeletorFiltro = (filtro) => {  
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps);
+    console.log(prevState);
+  }
+
+  _navegarSeletorFiltro = (filtro) => {
     this.props.navigation.navigate(filtro);
   }
 
@@ -26,12 +47,12 @@ class BuscaIgrejasContainer extends Component {
   render() {
     return (
       <BuscaIgrejas 
+        dadosFiltro={this.state.dadosFiltro}
         navegarFiltro={this._navegarSeletorFiltro}
         buscarIgrejas={this._buscarIgrejas}
       />
     );
   }
-
 }
 
 export default BuscaIgrejasContainer;

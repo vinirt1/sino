@@ -21,8 +21,7 @@ class ListaIgrejasContainer extends Component {
     }
 
     _selecionarIgreja = (igreja) => {
-        alert(igreja.nome);
-        this._voltar();
+        this.props.navigation.navigate('IgrejaDetalhe', { igreja });
     }
 
     render() {

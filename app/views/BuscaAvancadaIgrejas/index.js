@@ -2,7 +2,9 @@ import React from 'react';
 import {
   StyleSheet,
   View,
+  Dimensions,
   Button,
+  Image,
 } from 'react-native';
 
 import {
@@ -11,23 +13,30 @@ import {
 
 import SectionBusca from '../../components/SectionBusca';
 
-const BuscaIgrejasView = (props) => {
+const BuscaAvancadaIgrejasView = (props) => {
+  const imageWidth = Dimensions.get('window').width;
+
   return (
     <View style={styles.container}>
-      <View style={styles.header} />
+      <View style={styles.header}>
+        <Image
+          style={{ width: imageWidth }}
+          source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}
+        />
+      </View>
       <View style={styles.body}>
         <SectionBusca 
-          titulo="Onde deseja ir à missa?" 
-          descricao={ props.dadosFiltro.local.nome }
-          acao={() => props.navegarFiltro('Local')} /> 
+          titulo="Estados" 
+          descricao="Distrito Federal" 
+          acao={() => props.navegarFiltro('Estados')} /> 
         <SectionBusca 
-          titulo="Quando?" 
-          descricao={ props.dadosFiltro.diaSemana.nome }
-          acao={() => props.navegarFiltro('DiasSemana')} />        
+          titulo="Cidades" 
+          descricao="Águas Claras" 
+          acao={() => props.navegarFiltro('Cidades')} />  
         <SectionBusca 
-          titulo="Em qual horário?" 
-          descricao={ props.dadosFiltro.horario.nome } 
-          acao={() => props.navegarFiltro('Horarios')} />       
+          titulo="Bairro" 
+          descricao="Sul" 
+          acao={() => props.navegarFiltro('Bairro')} />                                 
       </View>
       <View style={styles.footer}>
         <Button
@@ -46,10 +55,12 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lighter,
     flex: 1
   },
-  header: {},
+  header: {
+    flex: 3,
+  },
   body: {
     backgroundColor: Colors.white,
-    flex: 11,
+    flex: 8.5,
   },
   footer: {
     backgroundColor: Colors.white,
@@ -59,4 +70,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BuscaIgrejasView;
+export default BuscaAvancadaIgrejasView;

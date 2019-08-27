@@ -1,24 +1,22 @@
 import React from 'react';
 import {
-  TouchableOpacity,
   StyleSheet,
   View,
   Text,
+  CheckBox,
 } from 'react-native';
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-
-const SectionBuscaComponent = (props) =>
+const SectionDetalheComponent = (props) =>
     <View style={styles.sectionContainer}>
-        <TouchableOpacity onPress={() => props.acao()}>
-          <Text style={styles.sectionTitle}>{props.titulo}</Text>
-            <Text style={styles.sectionDescription}>
-                {props.descricao}
-            </Text>
-        </TouchableOpacity>
+        <Text style={styles.sectionTitle}>{props.titulo}</Text>
+        <CheckBox
+          value={ true }
+          onValueChange={() => console.log()}
+        />
     </View>;    
 
 const styles = StyleSheet.create({
@@ -29,17 +27,17 @@ const styles = StyleSheet.create({
       borderBottomColor: "#47315a",
     },
     sectionTitle: {
-      fontSize: 32,
+      fontSize: 24,
       fontWeight: '600',
       color: Colors.black,
     },
     sectionDescription: {
       marginTop: 8,
       marginBottom: 8,
-      fontSize: 24,
+      fontSize: 18,
       fontWeight: '400',
-      color: 'steelblue',
+      color: Colors.black,
     },
   });
 
-  export default SectionBuscaComponent;
+  export default SectionDetalheComponent;

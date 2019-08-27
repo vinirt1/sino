@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  TouchableOpacity,
   StyleSheet,
   View,
   Text,
@@ -10,15 +9,22 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-
-const SectionBuscaComponent = (props) =>
+const SectionDetalheComponent = (props) =>
     <View style={styles.sectionContainer}>
-        <TouchableOpacity onPress={() => props.acao()}>
-          <Text style={styles.sectionTitle}>{props.titulo}</Text>
+        <Text style={styles.sectionTitle}>{props.titulo}</Text>
+
+        { !props.link &&
             <Text style={styles.sectionDescription}>
                 {props.descricao}
             </Text>
-        </TouchableOpacity>
+        }
+
+        { props.link &&
+            <Text style={styles.sectionDescriptionLink}>
+                {props.descricao}
+            </Text>
+        }
+
     </View>;    
 
 const styles = StyleSheet.create({
@@ -29,17 +35,24 @@ const styles = StyleSheet.create({
       borderBottomColor: "#47315a",
     },
     sectionTitle: {
-      fontSize: 32,
+      fontSize: 24,
       fontWeight: '600',
       color: Colors.black,
     },
     sectionDescription: {
       marginTop: 8,
       marginBottom: 8,
-      fontSize: 24,
+      fontSize: 18,
       fontWeight: '400',
-      color: 'steelblue',
+      color: Colors.black,
     },
+    sectionDescriptionLink: {
+        marginTop: 8,
+        marginBottom: 8,
+        fontSize: 18,
+        fontWeight: '400',
+        color: 'steelblue',
+      },
   });
 
-  export default SectionBuscaComponent;
+  export default SectionDetalheComponent;
