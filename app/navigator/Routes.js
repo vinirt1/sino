@@ -2,6 +2,7 @@ import BuscaIgrejas from '../containers/BuscaIgrejas';
 import BuscaAvancadaIgrejas from '../containers/BuscaAvancadaIgrejas';
 import DiasSemana from '../containers/DiasSemana';
 import Horarios from '../containers/Horarios';
+import Locais from '../containers/Locais';
 import Estados from '../containers/Estados';
 import Cidades from '../containers/Cidades';
 import Bairros from '../containers/Bairros';
@@ -41,6 +42,15 @@ const Routes = {
         name: 'Horarios',
         description: 'Relação de Horarios para compor a pesquisa de igrejas',
         screen: Horarios,
+        navigationOptions: {
+            header: null,
+        },
+    },
+    Locais: {
+        id: 'Locais',
+        name: 'Locais',
+        description: 'Opções de local compor a pesquisa de igrejas',
+        screen: Locais,
         navigationOptions: {
             header: null,
         },

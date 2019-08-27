@@ -16,7 +16,7 @@ class DiasSemanaContainer extends Component {
   }
 
   _voltar = (horario) => {
-    this.props.navigation.navigate('BuscaIgreja', {horario});
+    this.props.navigation.navigate('BuscaIgrejas', {horario});
   }
 
   _selecionarHorario = (horario) => {

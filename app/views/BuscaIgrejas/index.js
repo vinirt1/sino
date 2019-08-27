@@ -10,6 +10,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import SectionBusca from '../../components/SectionBusca';
+import SectionBuscaAvancada from '../../components/SectionBuscaAvancada'
 
 const BuscaIgrejasView = (props) => {
   return (
@@ -19,7 +20,7 @@ const BuscaIgrejasView = (props) => {
         <SectionBusca 
           titulo="Onde deseja ir à missa?" 
           descricao={ props.dadosFiltro.local.nome }
-          acao={() => props.navegarFiltro('Local')} /> 
+          acao={() => props.navegarFiltro('Locais')} /> 
         <SectionBusca 
           titulo="Quando?" 
           descricao={ props.dadosFiltro.diaSemana.nome }
@@ -27,7 +28,10 @@ const BuscaIgrejasView = (props) => {
         <SectionBusca 
           titulo="Em qual horário?" 
           descricao={ props.dadosFiltro.horario.nome } 
-          acao={() => props.navegarFiltro('Horarios')} />       
+          acao={() => props.navegarFiltro('Horarios')} />  
+        <SectionBuscaAvancada
+          descricao="Busca Avançada" 
+          acao={() => props.navegarFiltro('BuscaAvancadaIgrejas')} />      
       </View>
       <View style={styles.footer}>
         <Button
