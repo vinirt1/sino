@@ -15,13 +15,12 @@ class DiasSemanaContainer extends Component {
     }
   }
 
-  _voltar = () => {
-    this.props.navigation.goBack();
+  _voltar = (horario) => {
+    this.props.navigation.navigate('BuscaIgreja', {horario});
   }
 
   _selecionarHorario = (horario) => {
-    alert(horario.nome);
-    this._voltar();
+    this._voltar(horario);
   }
 
   render() {

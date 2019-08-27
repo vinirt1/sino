@@ -15,13 +15,13 @@ class DiasSemanaContainer extends Component {
     }
   }
 
-  _voltar = () => {
-    this.props.navigation.goBack();
+  _voltar = (diaSemana) => {
+    this.props.navigation.navigate('BuscaIgrejas', {diaSemana});
   }
 
   _selecionarDiaSemana = (diaSemana) => {
     alert(diaSemana.nome);
-    this._voltar();
+    this._voltar(diaSemana);
   }
 
   render() {

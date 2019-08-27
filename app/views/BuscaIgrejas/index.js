@@ -46,7 +46,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.lighter,
     flex: 1
   },
-  header: {},
+  header: {
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
   body: {
     backgroundColor: Colors.white,
     flex: 11,

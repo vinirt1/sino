@@ -22,18 +22,12 @@ class BuscaIgrejasContainer extends Component {
       }
     }
   }
-  
-  componentDidMount() {
-    console.log(this.props);
-  }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
+  static getDerivedStateFromProps(nextProps, prevState) {
+    console.log('nextProps', nextProps);
+    console.log('prevState', prevState);
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps);
-    console.log(prevState);
+    return {};
   }
 
   _navegarSeletorFiltro = (filtro) => {
